@@ -20,3 +20,5 @@
 
 ## Libraries
 Χρησιμοποιήθηκαν τα ``PyQt6``, ``ctypes``
+
+![Image](https://github.com/silverargyriou/GlossoLogia/raw/main/img.jpg)
