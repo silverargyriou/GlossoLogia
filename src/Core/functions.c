@@ -67,7 +67,25 @@ char* read_file_custom(const char *filepath)
     return buffer;
 }
 
-char* clear_string(char *string)
+char* cleanup_string(char *string)
 {
+    if (string == NULL) return NULL;
 
+    int length = len_string(string);
+    int w = 0;
+
+    for (int i = 0; i < length; i++)
+    {
+        if (string[i] == '\r')
+        {
+            continue; 
+        }
+        
+        string[w] = string[i];
+        w++;
+    }
+    
+    string[w] = '\0';
+
+    return string;
 }
