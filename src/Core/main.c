@@ -19,9 +19,9 @@ int main(void) {
         return 1;
     }
     
-    printf("%d %d\n", file_data[5], file_data[6]);
-
+    char *cleanedup_data = cleanup_string(file_data);
     free(file_data);
+    printf("%d %d %d\n", cleanedup_data[4], cleanedup_data[5], cleanedup_data[6]);
 
     return 0;
 }
