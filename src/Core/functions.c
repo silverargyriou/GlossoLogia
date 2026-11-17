@@ -131,13 +131,18 @@ char* cleanup_string(char *string)
     {
         if (string[i] == '\n')
         {
+            if (string[i - 1] == '\n')
+            {
+            
+            } else {
+                string[w] = string[i];
+                w++;
+            }
             in_comment = 0;
-            string[w] = string[i];
-            w++;
             continue;
         }
         
-        if (string[i] == '\r' || string[i] == ' ')
+        if (string[i] == '\r')
         {
             continue; 
         }
