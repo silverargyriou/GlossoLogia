@@ -4,9 +4,5 @@
 
 char* init_interpreter(char file_data[])
 {
-    char *string = cleanup_string(file_data);
-
-    printf("%s", string);
-
-    return string;
+    
 }
