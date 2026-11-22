@@ -1,5 +1,3 @@
-5 + 5 // Testing comments
-
-// Testing empty lines
+5 + 5
 
 10 + 10
