@@ -1,3 +1,13 @@
+local interpreter = require("interpreter")
+local parser = require("parser")
+local lexer = require("lexer")
+
+local DEBUG = false
+io.write("Debug mode (y/n): ")
+if io.read() == 'y' then
+   DEBUG = true
+end
+
 ---@param fileName string
 local function compile(fileName)
    local file, err = io.open(fileName, "r")
@@ -7,12 +17,8 @@ local function compile(fileName)
    end
 
    local context = file:read("a")
-   
-   local lines = 0
-   local left, middle, right = string.match(context, "([%w_]+)%s*([%+%-%*/])%s*([%w_]+)")
-   print(left)
-   print(middle)
-   print(right)
+   lexer.DEBUG = DEBUG
+   lexer.tokenize(context)
 end
 
 compile("test.eh")
